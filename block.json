@@ -1,10 +1,10 @@
 {
-    "apiVersion": 2,
-    "name": "first-block/first-block",
-    "title": "First Block",
-    "description": "A simple WordPress block.",
-    "category": "text",
-    "icon": "smiley",
-    "textdomain": "first-block",
-    "editorScript": "file:./index.js"
+	"apiVersion": 2,
+	"name": "first-block/first-block",
+	"title": "First Block",
+	"description": "A simple WordPress block.",
+	"category": "text",
+	"icon": "smiley",
+	"textdomain": "first-block",
+	"editorScript": "file:./build/index.js"
 }

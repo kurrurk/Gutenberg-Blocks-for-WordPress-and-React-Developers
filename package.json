@@ -1,0 +1,27 @@
+{
+	"name": "first-block",
+	"version": "1.0.0",
+	"description": "A simple WordPress plugin that adds my first block.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "wp-scripts build",
+		"start": "wp-scripts start"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kurrurk/Gutenberg-Blocks-for-WordPress-and-React-Developers.git"
+	},
+	"author": "Vasily Shatalkin",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/kurrurk/Gutenberg-Blocks-for-WordPress-and-React-Developers/issues"
+	},
+	"homepage": "https://github.com/kurrurk/Gutenberg-Blocks-for-WordPress-and-React-Developers#readme",
+	"devDependencies": {
+		"@wordpress/scripts": "^31.2.0"
+	},
+	"dependencies": {
+		"@wordpress/blocks": "^15.10.0"
+	}
+}
