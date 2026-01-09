@@ -6,5 +6,7 @@
 	"category": "text",
 	"icon": "smiley",
 	"textdomain": "first-block",
-	"editorScript": "file:./build/index.js"
+	"editorScript": "file:./build/index.js",
+    "style": "file:./build/style-index.css",
+    "editorStyle": "file:./build/index.css"
 }
