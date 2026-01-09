@@ -1,0 +1,8 @@
+{
+	"[scss]": {
+		"editor.formatOnSave": false,
+		"editor.codeActionOnSave": {
+			"source.fixAll.stylelint": false
+		}
+	}
+}
