@@ -61,6 +61,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('blocks-course/text-box', {
+  icon: {
+    src: 'text-page',
+    foreground: '#090',
+    background: '#fff'
+  },
+  // icon: {
+  // 	src: (
+  // 		<svg
+  // 			version="1.1"
+  // 			viewBox="0 0 500 500"
+  // 			preserveAspectRatio="xMinYmin meet"
+  // 		>
+  // 			<circle cx="250" cy="250" r="200" />
+  // 		</svg>
+  // 	),
+  // 	foreground: '#00f',
+  // 	background: '#fff',
+  // },
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
