@@ -7,6 +7,7 @@ import './editor.scss';
  * Edit component for the boilerplate block.
  * @return {Element} Element to render.
  */
+
 export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
