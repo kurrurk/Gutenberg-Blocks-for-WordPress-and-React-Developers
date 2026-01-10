@@ -251,7 +251,60 @@ __webpack_require__.r(__webpack_exports__);
     attributes: {
       gradient: 'red-to-blue'
     }
-  }]
+  }],
+  transforms: {
+    from: [{
+      type: 'block',
+      blocks: ['core/paragraph'],
+      transform: ({
+        content,
+        align
+      }) => {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)('blocks-course/text-box', {
+          text: content,
+          alignment: align
+        });
+      }
+    }, {
+      type: 'enter',
+      regExp: /textbox/i,
+      transform: () => {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)('blocks-course/text-box', {
+          shadow: true,
+          gradient: 'red-to-blue'
+        });
+      }
+    }, {
+      type: 'prefix',
+      prefix: 'textbox',
+      transform: () => {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)('blocks-course/text-box', {
+          shadow: true,
+          gradient: 'green-to-yellow'
+        });
+      }
+    }],
+    to: [{
+      type: 'block',
+      blocks: ['core/paragraph'],
+      isMatch: ({
+        text
+      }) => {
+        return text ? true : false;
+      },
+      transform: ({
+        text,
+        alignment
+      }) => {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)('core/paragraph', {
+          content: text,
+          align: alignment,
+          shadow: true,
+          gradient: 'red-to-blue'
+        });
+      }
+    }]
+  }
 });
 
 /***/ },
