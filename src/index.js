@@ -1,3 +1,4 @@
+import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import './style.scss';
 import Edit from './edit';
@@ -24,4 +25,14 @@ registerBlockType( 'blocks-course/text-box', {
 	// },
 	edit: Edit,
 	save,
+	variations: [
+		{
+			name: 'blocks-course/gradient-text-box',
+			title: __( 'Gradient Text Box' ),
+			icon: 'wordpress',
+			attributes: {
+				gradient: 'red-to-blue',
+			},
+		},
+	],
 } );
