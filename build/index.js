@@ -8,7 +8,7 @@
 (module) {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"blocks-course/text-box","title":"Text Box","category":"text","icon":"text-page","description":"Example block written with ESNext standard and JSX support – build step required.","keywords":["text","paragraph","box"],"supports":{"html":false,"color":{"background":true,"text":true,"gradients":true},"spacing":{"padding":true}},"styles":[{"name":"squared","label":"Squared","isDefault":true},{"name":"rounded","label":"Rounded"}],"example":{"attributes":{"text":"this is some text!","gradient":"red-to-blue","shadow":true}},"textdomain":"text-box","editorScript":"file:./build/index.js","editorStyle":"file:./build/index.css","style":"file:./build/style-index.css","attributes":{"text":{"type":"string","source":"html","selector":"div"},"alignment":{"type":"string","default":"left"},"shadow":{"type":"boolean","default":false},"shadowOpacity":{"type":"number","default":30},"backgroundColor":{"type":"string"},"textColor":{"type":"string"},"gradient":{"type":"string"},"style":{"type":"object","default":{"spacing":{"padding":{"top":"20px","right":"20px","left":"20px","bottom":"20px"}}}}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"blocks-course/text-box","title":"Text Box","category":"text","icon":"text-page","description":"Example block written with ESNext standard and JSX support – build step required.","keywords":["text","paragraph","box"],"supports":{"html":false,"color":{"background":true,"text":true,"gradients":true},"spacing":{"padding":true}},"styles":[{"name":"squared","label":"Squared","isDefault":true},{"name":"rounded","label":"Rounded"}],"example":{"attributes":{"text":"this is some text!","gradient":"red-to-blue","shadow":true}},"textdomain":"text-box","editorScript":"file:./build/index.js","editorStyle":"file:./build/index.css","style":"file:./build/style-index.css","attributes":{"text":{"type":"string","source":"html","selector":"div"},"textAlignment":{"type":"string","default":"left"},"shadow":{"type":"boolean","default":false},"shadowOpacity":{"type":"number","default":30},"backgroundColor":{"type":"string"},"textColor":{"type":"string"},"gradient":{"type":"string"},"style":{"type":"object","default":{"spacing":{"padding":{"top":"20px","right":"20px","left":"20px","bottom":"20px"}}}}}}');
 
 /***/ },
 
@@ -134,13 +134,13 @@ function Edit(props) {
   } = props;
   const {
     text,
-    alignment,
+    textAlignment,
     shadow,
     shadowOpacity
   } = attributes;
-  const onChangeAlignment = newAlignment => {
+  const onChangeTextAlignment = newTextAlignment => {
     setAttributes({
-      alignment: newAlignment
+      textAlignment: newTextAlignment
     });
   };
   const onChangeText = newText => {
@@ -158,7 +158,7 @@ function Edit(props) {
       shadow: !shadow
     });
   };
-  const classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(`text-box-align-${alignment}`, {
+  const classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(`text-box-align-${textAlignment}`, {
     'has-shadow': shadow,
     [`shadow-opacity-${shadowOpacity}`]: shadow && shadowOpacity
   });
@@ -183,8 +183,8 @@ function Edit(props) {
         isActive: shadow
       }],
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.AlignmentToolbar, {
-        value: alignment,
-        onChange: onChangeAlignment
+        value: textAlignment,
+        onChange: onChangeTextAlignment
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
@@ -230,6 +230,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
 /* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/save.js");
 /* harmony import */ var _v1__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./v1 */ "./src/v1.js");
+/* harmony import */ var _v2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./v2 */ "./src/v2.js");
+
 
 
 
@@ -257,7 +259,7 @@ __webpack_require__.r(__webpack_exports__);
   // },
   edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_4__["default"],
-  deprecated: [_v1__WEBPACK_IMPORTED_MODULE_5__["default"]],
+  deprecated: [_v1__WEBPACK_IMPORTED_MODULE_5__["default"], _v2__WEBPACK_IMPORTED_MODULE_6__["default"]],
   variations: [{
     name: 'blocks-course/gradient-text-box',
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Gradient Text Box'),
@@ -276,7 +278,7 @@ __webpack_require__.r(__webpack_exports__);
       }) => {
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)('blocks-course/text-box', {
           text: content,
-          alignment: align
+          textAlignment: align
         });
       }
     }, {
@@ -308,11 +310,11 @@ __webpack_require__.r(__webpack_exports__);
       },
       transform: ({
         text,
-        alignment
+        textAlignment
       }) => {
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)('core/paragraph', {
           content: text,
-          align: alignment,
+          align: textAlignment,
           shadow: true,
           gradient: 'red-to-blue'
         });
@@ -349,11 +351,11 @@ function save({
 }) {
   const {
     text,
-    alignment,
+    textAlignment,
     shadow,
     shadowOpacity
   } = attributes;
-  const classes = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`text-box-align-${alignment}`, {
+  const classes = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`text-box-align-${textAlignment}`, {
     'has-shadow': shadow,
     [`shadow-opacity-${shadowOpacity}`]: shadow && shadowOpacity
   });
@@ -396,9 +398,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../block.json */ "./block.json");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../block.json */ "./block.json");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -416,7 +421,11 @@ const v1 = {
     }
   },
   attributes: {
-    ..._block_json__WEBPACK_IMPORTED_MODULE_2__.attributes,
+    ...(0,lodash__WEBPACK_IMPORTED_MODULE_2__.omit)(_block_json__WEBPACK_IMPORTED_MODULE_3__.attributes, ['textAlignment']),
+    alignment: {
+      type: 'string',
+      default: 'left'
+    },
     text: {
       type: 'string',
       source: 'html',
@@ -428,15 +437,15 @@ const v1 = {
   }) => {
     const {
       text,
-      alignment,
+      textAlignment,
       shadow,
       shadowOpacity
     } = attributes;
-    const classes = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`text-box-align-${alignment}`, {
+    const classes = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`text-box-align-${textAlignment}`, {
       'has-shadow': shadow,
       [`shadow-opacity-${shadowOpacity}`]: shadow && shadowOpacity
     });
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
       ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
         className: classes
       }),
@@ -446,6 +455,82 @@ const v1 = {
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (v1);
+
+/***/ },
+
+/***/ "./src/v2.js"
+/*!*******************!*\
+  !*** ./src/v2.js ***!
+  \*******************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../block.json */ "./block.json");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+const v2 = {
+  supports: {
+    html: false,
+    color: {
+      background: true,
+      text: true,
+      gradients: true
+    },
+    spacing: {
+      padding: true
+    }
+  },
+  attributes: {
+    ...(0,lodash__WEBPACK_IMPORTED_MODULE_2__.omit)(_block_json__WEBPACK_IMPORTED_MODULE_3__.attributes, ['textAlignment']),
+    alignment: {
+      type: 'string',
+      default: 'left'
+    }
+  },
+  migrate: attributes => {
+    return {
+      ...(0,lodash__WEBPACK_IMPORTED_MODULE_2__.omit)(attributes, ['alignment']),
+      textAlignment: attributes.alignment
+    };
+  },
+  save: ({
+    attributes
+  }) => {
+    const {
+      text,
+      textAlignment,
+      shadow,
+      shadowOpacity
+    } = attributes;
+    const classes = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`text-box-align-${textAlignment}`, {
+      'has-shadow': shadow,
+      [`shadow-opacity-${shadowOpacity}`]: shadow && shadowOpacity
+    });
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+      ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
+        className: classes
+      }),
+      tagName: "div",
+      value: text
+    });
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (v2);
 
 /***/ },
 
@@ -490,6 +575,17 @@ module.exports = window["wp"]["components"];
 
 "use strict";
 module.exports = window["wp"]["i18n"];
+
+/***/ },
+
+/***/ "lodash"
+/*!*************************!*\
+  !*** external "lodash" ***!
+  \*************************/
+(module) {
+
+"use strict";
+module.exports = window["lodash"];
 
 /***/ },
 

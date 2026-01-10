@@ -45,7 +45,7 @@
 			"source": "html",
 			"selector": "div"
 		},
-		"alignment": {
+		"textAlignment": {
 			"type": "string",
 			"default": "left"
 		},

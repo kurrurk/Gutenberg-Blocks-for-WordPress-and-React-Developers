@@ -4,6 +4,7 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 import v1 from './v1';
+import v2 from './v2';
 
 registerBlockType( 'blocks-course/text-box', {
 	icon: {
@@ -26,7 +27,7 @@ registerBlockType( 'blocks-course/text-box', {
 	// },
 	edit: Edit,
 	save,
-	deprecated: [ v1 ],
+	deprecated: [ v1, v2 ],
 	variations: [
 		{
 			name: 'blocks-course/gradient-text-box',
@@ -45,7 +46,7 @@ registerBlockType( 'blocks-course/text-box', {
 				transform: ( { content, align } ) => {
 					return createBlock( 'blocks-course/text-box', {
 						text: content,
-						alignment: align,
+						textAlignment: align,
 					} );
 				},
 			},
@@ -77,10 +78,10 @@ registerBlockType( 'blocks-course/text-box', {
 				isMatch: ( { text } ) => {
 					return text ? true : false;
 				},
-				transform: ( { text, alignment } ) => {
+				transform: ( { text, textAlignment } ) => {
 					return createBlock( 'core/paragraph', {
 						content: text,
-						align: alignment,
+						align: textAlignment,
 						shadow: true,
 						gradient: 'red-to-blue',
 					} );

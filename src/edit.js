@@ -12,9 +12,9 @@ import { PanelBody, RangeControl } from '@wordpress/components';
 
 export default function Edit( props ) {
 	const { attributes, setAttributes } = props;
-	const { text, alignment, shadow, shadowOpacity } = attributes;
-	const onChangeAlignment = ( newAlignment ) => {
-		setAttributes( { alignment: newAlignment } );
+	const { text, textAlignment, shadow, shadowOpacity } = attributes;
+	const onChangeTextAlignment = ( newTextAlignment ) => {
+		setAttributes( { textAlignment: newTextAlignment } );
 	};
 	const onChangeText = ( newText ) => {
 		setAttributes( { text: newText } );
@@ -26,7 +26,7 @@ export default function Edit( props ) {
 		setAttributes( { shadow: ! shadow } );
 	};
 
-	const classes = classNames( `text-box-align-${ alignment }`, {
+	const classes = classNames( `text-box-align-${ textAlignment }`, {
 		'has-shadow': shadow,
 		[ `shadow-opacity-${ shadowOpacity }` ]: shadow && shadowOpacity,
 	} );
@@ -58,8 +58,8 @@ export default function Edit( props ) {
 				] }
 			>
 				<AlignmentToolbar
-					value={ alignment }
-					onChange={ onChangeAlignment }
+					value={ textAlignment }
+					onChange={ onChangeTextAlignment }
 				/>
 			</BlockControls>
 
