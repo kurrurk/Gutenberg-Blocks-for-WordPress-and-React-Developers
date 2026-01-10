@@ -7,7 +7,12 @@
 	"description": "Example block written with ESNext standard and JSX support – build step required.",
 	"keywords": ["text", "paragraph", "box"],
 	"supports": {
-		"html": false
+		"html": false,
+		"color": {
+			"background": true,
+			"text": true,
+			"gradients": true
+		}
 	},
 	"textdomain": "text-box",
 	"editorScript": "file:./build/index.js",
@@ -29,10 +34,7 @@
 		"textColor": {
 			"type": "string"
 		},
-		"customBackgroundColor": {
-			"type": "string"
-		},
-		"customTextColor": {
+		"gradient": {
 			"type": "string"
 		}
 	}
