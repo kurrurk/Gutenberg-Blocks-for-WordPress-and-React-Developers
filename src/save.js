@@ -15,7 +15,7 @@ export default function save( { attributes } ) {
 			{ ...useBlockProps.save( {
 				className: classes,
 			} ) }
-			tagName="h4"
+			tagName="div"
 			value={ text }
 		/>
 	);
